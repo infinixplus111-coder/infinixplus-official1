@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>InfiniCash$ Solutions | Licensed Money Lender in Singapore</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #D4AF37;
+            --primary-dark: #b8941f;
+            --secondary: #1a365d;
+            --accent: #2d3748;
+            --light: #f8f9fa;
+            --dark: #2d3748;
+            --white: #ffffff;
+            --gray: #718096;
+            --light-gray: #e2e8f0;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--dark);
+            overflow-x: hidden;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header Styles */
+        header {
+            background: var(--white);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .header-top {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .contact-info span {
+            margin-right: 20px;
+        }
+
+        .contact-info i {
+            margin-right: 8px;
+            color: var(--primary);
+        }
+
+        .header-main {
+            padding: 15px 0;
+        }
+
+        .header-main .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo h1 {
+            font-size: 28px;
+            font-weight: 800;
+            color: var(--secondary);
+        }
+
+        .logo .cash-symbol {
+            color: var(--primary);
+            font-weight: 700;
+            margin-left: 2px;
+        }
+
+        .logo .tagline {
+            font-size: 12px;
+            color: var(--gray);
+            margin-left: 10px;
+            font-weight: 400;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 600;
+            font-size: 16px;
+            transition: color 0.3s ease;
+            position: relative;
+        }
+
+        nav ul li a:hover {
+            color: var(--primary);
+        }
+
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--primary);
+            transition: width 0.3s ease;
+        }
+
+        nav ul li a:hover::after {
+            width: 100%;
+        }
+
+        .cta-button {
+            background: var(--primary);
+            color: var(--white);
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .cta-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--secondary) 0%, var(--accent) 100%);
+            color: var(--white);
+            padding: 150px 0 100px;
+            margin-top: 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: url('https://images.unsplash.com/photo-1554224155-6726b3ff858f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1000&q=80') center/cover no-repeat;
+            opacity: 0.1;
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.9;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .secondary-button {
+            background: transparent;
+            border: 2px solid var(--white);
+            color: var(--white);
+        }
+
+        .secondary-button:hover {
+            background: var(--white);
+            color: var(--secondary);
+        }
+
+        /* Features Section */
+        .features {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .section-title h2 {
+            font-size: 2.5rem;
+            color: var(--secondary);
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .section-title p {
+            color: var(--gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            background: var(--white);
+            padding: 40px 30px;
+            border-radius: 10px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+            border: 1px solid var(--light-gray);
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--white);
+            font-size: 2rem;
+        }
+
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Services Section */
+        .services {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .service-image {
+            height: 200px;
+            background: var(--secondary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-size: 3rem;
+        }
+
+        .service-content {
+            padding: 30px;
+        }
+
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+
+        /* Loan Application Section */
+        .loan-application {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .application-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            align-items: start;
+        }
+
+        .calculator-section {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-section {
+            background: var(--light);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: var(--secondary);
+        }
+
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid var(--light-gray);
+            border-radius: 5px;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+            background: var(--white);
+            color: #000000; /* 确保黑色字体 */
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: var(--gray);
+            opacity: 0.7;
+        }
+
+        .calculator-result {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 20px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .calculator-result h4 {
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+
+        /* Why Choose Us */
+        .why-choose {
+            padding: 80px 0;
+            background: var(--white);
+        }
+
+        .reasons-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+
+        .reason-item {
+            text-align: center;
+            padding: 30px;
+        }
+
+        .reason-icon {
+            font-size: 3rem;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 80px 0;
+            background: var(--light);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .testimonial-card {
+            background: var(--white);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .testimonial-text::before {
+            content: '"';
+            font-size: 4rem;
+            color: var(--primary);
+            position: absolute;
+            top: -20px;
+            left: -10px;
+            opacity: 0.3;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: var(--secondary);
+            margin-right: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--white);
+            font-weight: bold;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--secondary);
+            color: var(--white);
+            padding: 60px 0 0;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: var(--primary);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: #cbd5e0;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--primary);
+        }
+
+        .contact-info-footer p {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info-footer i {
+            margin-right: 10px;
+            color: var(--primary);
+            width: 20px;
+        }
+
+        .footer-bottom {
+            background: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            text-align: center;
+            font-size: 0.9rem;
+            color: #cbd5e0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-main .container {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+            }
+
+            .features-grid,
+            .services-grid,
+            .testimonials-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .application-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="contact-info">
+                    <span><i class="fas fa-phone"></i> +65 6868 9889</span>
+                    <span><i class="fas fa-envelope"></i> inquiry@infinicash.sg</span>
+                </div>
+                <div class="license-info">
+                    Licensed Moneylender | License No: 123/2024
+                </div>
+            </div>
+        </div>
+        <div class="header-main">
+            <div class="container">
+                <div class="logo">
+                    <h1>InfiniCash<span class="cash-symbol">$</span> Solutions</h1>
+                    <span class="tagline">Trusted Licensed Money Lender</span>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#home">HOME</a></li>
+                        <li><a href="#services">SERVICES</a></li>
+                        <li><a href="#apply">APPLY NOW</a></li>
+                        <li><a href="#contact">CONTACT</a></li>
+                    </ul>
+                </nav>
+                <a href="#apply" class="cta-button">APPLY NOW</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Fast & Reliable Financial Solutions in Singapore</h1>
+                <p>InfiniCash$ Solutions is your trusted licensed money lender, offering transparent and legal financial services with quick approval and competitive rates.</p>
+                <div class="hero-buttons">
+                    <a href="#apply" class="cta-button">APPLY FOR LOAN</a>
+                    <a href="#contact" class="cta-button secondary-button">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Choose InfiniCash$ Solutions?</h2>
+                <p>We provide financial solutions tailored to your needs with transparency and reliability</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bolt"></i>
+                    </div>
+                    <h3>Fast Approval</h3>
+                    <p>Get your loan approved within hours with our streamlined application process.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3>Low Interest Rates</h3>
+                    <p>Competitive interest rates that are affordable and transparent with no hidden fees.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Licensed & Secure</h3>
+                    <p>Fully licensed by the Ministry of Law with complete data protection and security.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section class="services" id="services">
+        <div class="container">
+            <div class="section-title">
+                <h2>Our Loan Services</h2>
+                <p>We offer a variety of loan products to meet your specific financial needs</p>
+            </div>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-image">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Personal Loan</h3>
+                        <p>Flexible personal loans for all your financial needs with easy repayment terms.</p>
+                        <a href="#apply" class="cta-button" style="margin-top: 15px; display: inline-block;">Apply Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Business Loan</h3>
+                        <p>Fuel your business growth with our flexible financing options and quick approval.</p>
+                        <a href="#apply" class="cta-button" style="margin-top: 15px; display: inline-block;">Apply Now</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="service-image">
+                        <i class="fas fa-globe-asia"></i>
+                    </div>
+                    <div class="service-content">
+                        <h3>Foreigner Loan</h3>
+                        <p>Special loan packages for foreigners working in Singapore with valid work passes.</p>
+                        <a href="#apply" class="cta-button" style="margin-top: 15px; display: inline-block;">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Loan Application Section -->
+    <section class="loan-application" id="apply">
+        <div class="container">
+            <div class="section-title">
+                <h2>Apply for Loan</h2>
+                <p>Fill out the application form and get instant approval</p>
+            </div>
+            <div class="application-container">
+                <div class="calculator-section">
+                    <h3>Loan Calculator</h3>
+                    <div class="form-group">
+                        <label for="loanAmount">Loan Amount (S$)</label>
+                        <input type="number" id="loanAmount" placeholder="Enter amount" min="1000" max="100000" value="10000">
+                    </div>
+                    <div class="form-group">
+                        <label for="loanTerm">Loan Term (Months)</label>
+                        <select id="loanTerm">
+                            <option value="6">6 Months</option>
+                            <option value="12" selected>12 Months</option>
+                            <option value="24">24 Months</option>
+                            <option value="36">36 Months</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="interestRate">Interest Rate (%)</label>
+                        <input type="number" id="interestRate" step="0.1" value="4.5" min="1" max="20">
+                    </div>
+                    <div class="calculator-result">
+                        <h4>Monthly Payment</h4>
+                        <div id="monthlyPayment" style="font-size: 2rem; font-weight: bold;">S$ 0.00</div>
+                        <p style="margin-top: 10px; font-size: 0.9rem;">Total payable: S$ <span id="totalPayment">0.00</span></p>
+                    </div>
+                </div>
+
+                <div class="form-section">
+                    <h3>Application Form</h3>
+                    <form id="contactForm">
+                        <div class="form-group">
+                            <label for="fullName">Full Name *</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required style="color: #000000;">
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="Enter your email" required style="color: #000000;">
+                        </div>
+                        <div class="form-group">
+                            <label for="phone">Phone Number *</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required style="color: #000000;">
+                        </div>
+                        <div class="form-group">
+                            <label for="loanType">Loan Type *</label>
+                            <select id="loanType" name="loanType" required style="color: #000000;">
+                                <option value="">Select loan type</option>
+                                <option value="personal">Personal Loan</option>
+                                <option value="business">Business Loan</option>
+                                <option value="foreigner">Foreigner Loan</option>
+                                <option value="payday">Payday Loan</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="employment">Employment Status *</label>
+                            <select id="employment" name="employment" required style="color: #000000;">
+                                <option value="">Select employment status</option>
+                                <option value="employed">Employed</option>
+                                <option value="self-employed">Self-Employed</option>
+                                <option value="student">Student</option>
+                                <option value="unemployed">Unemployed</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="monthlyIncome">Monthly Income (S$)</label>
+                            <input type="number" id="monthlyIncome" name="monthlyIncome" placeholder="Enter monthly income" style="color: #000000;">
+                        </div>
+                        <div class="form-group">
+                            <label for="message">Additional Message</label>
+                            <textarea id="message" name="message" rows="4" placeholder="Any additional information..." style="color: #000000;"></textarea>
+                        </div>
+                        <button type="submit" class="cta-button" style="width: 100%; padding: 15px; font-size: 18px;">
+                            SUBMIT APPLICATION
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us -->
+    <section class="why-choose">
+        <div class="container">
+            <div class="section-title">
+                <h2>Why Borrowers Choose Us</h2>
+                <p>Experience the difference with our customer-focused approach</p>
+            </div>
+            <div class="reasons-grid">
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-clock"></i>
+                    </div>
+                    <h3>Quick Processing</h3>
+                    <p>Same-day approval for qualified applicants</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-file-alt"></i>
+                    </div>
+                    <h3>Simple Documentation</h3>
+                    <p>Minimal paperwork required for application</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-hand-holding-usd"></i>
+                    </div>
+                    <h3>Flexible Repayment</h3>
+                    <p>Customized repayment plans to suit your budget</p>
+                </div>
+                <div class="reason-item">
+                    <div class="reason-icon">
+                        <i class="fas fa-headset"></i>
+                    </div>
+                    <h3>24/7 Support</h3>
+                    <p>Round-the-clock customer service assistance</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-title">
+                <h2>What Our Clients Say</h2>
+                <p>Read testimonials from our satisfied customers</p>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        The application process was so smooth and fast. I got the funds I needed within hours. Highly recommended!
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">JL</div>
+                        <div class="author-info">
+                            <h4>John Lim</h4>
+                            <p>Personal Loan Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        As a foreigner working in Singapore, I was worried about getting a loan. InfiniCash$ Solutions made it easy with their foreigner loan program.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">SP</div>
+                        <div class="author-info">
+                            <h4>Sarah Patel</h4>
+                            <p>Foreigner Loan Customer</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial-card">
+                    <div class="testimonial-text">
+                        Their business loan helped me expand my small cafe. The repayment terms are flexible and the staff are very professional.
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">MW</div>
+                        <div class="author-info">
+                            <h4>Michael Wong</h4>
+                            <p>Business Loan Customer</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>InfiniCash$ Solutions</h3>
+                    <p>Your trusted licensed money lender in Singapore providing reliable and legal financial solutions with transparency and excellent customer service.</p>
+                </div>
+                <div class="footer-column">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#apply">Apply Now</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#services">Personal Loan</a></li>
+                        <li><a href="#services">Business Loan</a></li>
+                        <li><a href="#services">Foreigner Loan</a></li>
+                        <li><a href="#services">Payday Loan</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Contact Us</h3>
+                    <div class="contact-info-footer">
+                        <p><i class="fas fa-map-marker-alt"></i> 18 Raffles Quay, #30-01<br>Singapore 048582</p>
+                        <p><i class="fas fa-phone"></i> +65 6868 9889</p>
+                        <p><i class="fas fa-envelope"></i> inquiry@infinicash.sg</p>
+                        <p><i class="far fa-clock"></i> Mon-Fri: 9am-6pm<br>Sat: 9am-1pm</p>
+                    </div>
+                    <a href="#contact" class="cta-button" style="margin-top: 15px;">CONTACT US</a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2024 InfiniCash$ Solutions Pte Ltd. All Rights Reserved. | Licensed Moneylender | License No: 123/2024</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 5px 20px rgba(0,0,0,0.1)';
+            } else {
+                header.style.boxShadow = '0 2px 10px rgba(0,0,0,0.1)';
+            }
+        });
+
+        // Loan Calculator
+        function calculateLoan() {
+            const amount = parseFloat(document.getElementById('loanAmount').value) || 0;
+            const term = parseInt(document.getElementById('loanTerm').value) || 12;
+            const rate = parseFloat(document.getElementById('interestRate').value) || 0;
+            
+            const monthlyRate = rate / 100 / 12;
+            const monthlyPayment = (amount * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -term));
+            const totalPayment = monthlyPayment * term;
+            
+            document.getElementById('monthlyPayment').textContent = 'S$ ' + monthlyPayment.toFixed(2);
+            document.getElementById('totalPayment').textContent = totalPayment.toFixed(2);
+        }
+
+        // Initial calculation and event listeners
+        document.addEventListener('DOMContentLoaded', function() {
+            calculateLoan();
+            
+            document.getElementById('loanAmount').addEventListener('input', calculateLoan);
+            document.getElementById('loanTerm').addEventListener('change', calculateLoan);
+            document.getElementById('interestRate').addEventListener('input', calculateLoan);
+
+            // Form submission handler
+            const form = document.getElementById('contactForm');
+            if (form) {
+                form.addEventListener('submit', function(e) {
+                    e.preventDefault();
+                    
+                    const submitBtn = form.querySelector('button[type="submit"]');
+                    const originalText = submitBtn.textContent;
+                    
+                    // Show loading state
+                    submitBtn.textContent = 'SUBMITTING...';
+                    submitBtn.disabled = true;
+
+                    // Create form data
+                    const formData = new FormData(form);
+                    
+                    // Send to Formspree
+                    fetch('https://formspree.io/f/xdkppzjv', {
+                        method: 'POST',
+                        body: formData,
+                        headers: {
+                            'Accept': 'application/json'
+                        }
+                    })
+                    .then(response => {
+                        if (response.ok) {
+                            alert('✅ Loan application submitted successfully! We will contact you within 24 hours.');
+                            form.reset();
+                            calculateLoan(); // Reset calculator
+                        } else {
+                            throw new Error('Form submission failed');
+                        }
+                    })
+                    .catch(error => {
+                        alert('❌ Submission failed. Please try again or contact us directly.');
+                        console.error('Form submission error:', error);
+                    })
+                    .finally(() => {
+                        // Restore button state
+                        submitBtn.textContent = originalText;
+                        submitBtn.disabled = false;
+                    });
+                });
+            }
+        });
+    </script>
+</body>
+</html>
